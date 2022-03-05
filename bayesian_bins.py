@@ -361,7 +361,8 @@ def nb_calc_sdf(big_e, m_priors, event_counts, num_sweeps, max_m, max_t, sigma,
         # it is supposed to (depending on the value of k within the 'k-loop'). 
         # The returned 'new' sdf_sub_e should therefore still have the correct
         # sizing.
-        sdf_sub_e = nb_k_func(sdf_sub_e, sdf_idx, sub_m, event_counts, num_sweeps, sigma, gamma, length, max_t)
+        sdf_sub_e = nb_k_func(sdf_sub_e, sdf_idx, sub_m, event_counts, 
+                              num_sweeps, sigma, gamma, length, max_t)
         sdf_big_e[sub_m+1] = sdf_sub_e[-1] + m_priors[sub_m+1]
         
     sdf_big_e_val_max = np.max(sdf_big_e[l_bound:(u_bound+1)])
